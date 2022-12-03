@@ -85,6 +85,37 @@
             }
           ];
         };
+
+        husky = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./husky.nix
+            home-manager.nixosModules.home-manager
+            nur.nixosModules.nur
+            agenix.nixosModule
+            {
+              environment.systemPackages = [ agenix.defaultPackage.x86_64-linux ];
+            }
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.cofob = import ./home/husky.nix;
+            }
+            ({ config, pkgs, ... }:
+              let
+                overlay-custom = final: prev: {
+                  custom = import ./pkgs/top-level.nix { inherit pkgs; };
+                };
+              in
+              {
+                nixpkgs.overlays = [ overlay-custom ];
+              }
+            )
+            {
+              nixpkgs.overlays = [ nur.overlay pkgs-overlay.overlays.default ];
+            }
+          ];
+        };
       };
     };
 }

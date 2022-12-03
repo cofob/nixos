@@ -4,7 +4,8 @@ let
 
   bear = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICxTTHyhhZTc6pw+p55FfRZeuUqvHLy4RGGcZD1m9Nbf";
   fly = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG6wT9ftCz7BiH8vViJpQ7BIh0exf2b5kJzUbAoyP/Pf";
-  systems = [ bear fly ];
+  husky = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJC87IxPZgeFIEfiUbXppmzprk+qSq0IyOwJvOPQhh1Y";
+  systems = [ bear fly husky ];
 in
 {
   "./passwords/cofob.age".publicKeys = users ++ systems;
