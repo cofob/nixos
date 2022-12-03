@@ -115,15 +115,13 @@
   ];
 
   environment.variables = {
-    CMAKE_CXX_COMPILER = "gcc";
-    EDITOR = "code";
-    VISUAL = "code";
-    CHROME_EXECUTABLE = "chromium";
+    EDITOR = "vim";
+    VISUAL = "vim";
   };
 
   environment.shellAliases = {
     nixupd = ''sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "github:cofob/nixos"'';
-    tnixupd = "sudo nixos-rebuild switch --flake . --fast -p test";
+    tnixupd = "sudo nixos-rebuild switch --flake . --fast";
     tnix = "nixos-rebuild dry-build --flake .";
     nixclear = "sudo nix-store --gc && sudo nix-collect-garbage -d && nixupd";
     find_port = "sudo netstat -tulnp | grep";
