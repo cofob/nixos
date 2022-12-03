@@ -53,27 +53,27 @@
   services.tailscale.enable = true;
 
   services.syncthing = {
-    enable = true;
+    enable = false;
     user = "cofob";
     dataDir = "/home/cofob";
     systemService = true;
     folders = {
-      "/home/cofob/Documents/Learning" = {
-        id = "documents-learning";
-        devices = [ "huawei" "bear" "fly" "husky" ];
-        versioning = {
-          type = "simple";
-          params.keep = "10";
-        };
-      };
-      "/home/cofob/Documents/Dev" = {
-        id = "documents-dev";
-        devices = [ "huawei" "bear" "fly" "rat" "husky" ];
-        versioning = {
-          type = "simple";
-          params.keep = "3";
-        };
-      };
+      # "/home/cofob/Documents/Learning" = {
+      #   id = "documents-learning";
+      #   devices = [ "huawei" "bear" "fly" "husky" ];
+      #   versioning = {
+      #     type = "simple";
+      #     params.keep = "10";
+      #   };
+      # };
+      # "/home/cofob/Documents/Dev" = {
+      #   id = "documents-dev";
+      #   devices = [ "huawei" "bear" "fly" "rat" "husky" ];
+      #   versioning = {
+      #     type = "simple";
+      #     params.keep = "3";
+      #   };
+      # };
     };
     devices = {
       huawei = {
