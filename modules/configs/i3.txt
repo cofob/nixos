@@ -37,19 +37,19 @@ bindsym $mod+d exec dmenu_run
 
 # screenshots
 # full screen
-#bindsym Alt exec --no-startup-id maim "/home/$USER/Pictures/$(date).png"
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png"
 # active window
-#bindsym $mod+Alt exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png"
 # selection
-#bindsym Shift+Alt exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
 
 ## clipboard screenshots
 # full screen
-#bindsym Ctrl+Alt exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 # active window
-#bindsym Ctrl+$mod+Alt exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 # selection
-bindsym $mod+Ctrl+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # change focus
 bindsym $mod+j focus left
