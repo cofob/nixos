@@ -7,6 +7,7 @@
     transmission-gtk
     element-desktop
     bitwarden
+    gnome.eog
     dolphin
     mumble
     vlc
