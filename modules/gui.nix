@@ -11,14 +11,6 @@
       displayManager.sddm.enable = true;
       xkbOptions = "grp:caps_toggle";
       layout = "us,ru";
-      videoDrivers = [
-        "nvidia"
-        "nouveau"
-        "amdgpu"
-        "radeon"
-        "modesetting"
-        "fbdev"
-      ];
     };
 
     gnome.gnome-keyring.enable = true;

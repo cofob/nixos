@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ ./hardware/bear.nix ./common.nix ];
+    [ ./hardware/bear.nix ./common.nix ./modules/nvidia.nix ];
 
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.enable = true;

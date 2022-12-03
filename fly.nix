@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ ./hardware/fly.nix ./common.nix ];
+    [ ./hardware/fly.nix ./common.nix ./modules/nvidia.nix ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
