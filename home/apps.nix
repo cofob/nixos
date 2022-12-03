@@ -8,6 +8,7 @@
     element-desktop
     bitwarden
     gnome.eog
+    megasync
     dolphin
     mumble
     vlc
