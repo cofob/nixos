@@ -6,6 +6,9 @@
     libreoffice-fresh
     transmission-gtk
     element-desktop
+    networkmanager_dmenu
+    rofi
+    plasma-systemmonitor
     bitwarden
     gnome.eog
     megasync

@@ -16,6 +16,7 @@ exec "xsetroot -solid '#333333'"
 # autostart
 exec "mullvad-gui"
 exec "blueman-applet"
+exec "megasync"
 
 # terminal binding
 bindsym $mod+Return exec konsole
@@ -34,6 +35,18 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
+
+# start rofi
+bindsym $mod+Shift+d exec rofi -show run
+
+# start networkmanager_dmenu
+bindsym $mod+Shift+n exec networkmanager_dmenu
+
+# start file manager
+bindsym $mod+Shift+f exec dolphin
+
+# start system monitor
+bindsym $mod+Shift+m exec "sudo plasma-systemmonitor"
 
 # screenshots
 # full screen

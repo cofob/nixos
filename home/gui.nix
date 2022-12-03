@@ -22,7 +22,6 @@
     meslo-lgs-nf
     gyre-fonts
     unifont
-    discord
     custom.deta
     bottles
     obsidian

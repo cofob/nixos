@@ -20,11 +20,6 @@
     pipewire.enable = true;
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "nvidia-x11"
-    "nvidia-settings"
-  ];
-
   programs.gnupg.agent.pinentryFlavor = "qt";
 
   hardware.opengl.enable = true;
