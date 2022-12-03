@@ -60,7 +60,7 @@
     folders = {
       "/home/cofob/Documents/Learning" = {
         id = "documents-learning";
-        devices = [ "huawei" ];
+        devices = [ "huawei" "bear" "fly" "husky" ];
         versioning = {
           type = "simple";
           params.keep = "10";
@@ -72,14 +72,6 @@
         versioning = {
           type = "simple";
           params.keep = "3";
-        };
-      };
-      "/home/cofob/Music" = {
-        id = "music";
-        devices = [ "huawei" ];
-        versioning = {
-          type = "simple";
-          params.keep = "10";
         };
       };
     };
