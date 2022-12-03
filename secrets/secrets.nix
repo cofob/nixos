@@ -22,6 +22,8 @@ in
 
   "./syncthing/bear-cert.age".publicKeys = users ++ [ bear ];
   "./syncthing/bear-key.age".publicKeys = users ++ systems;
-  "./syncthing/fly-cert.age".publicKeys = users ++ [ fly ];
-  "./syncthing/fly-key.age".publicKeys = users ++ systems;
+  "./syncthing/fly-cert.age".publicKeys = users ++ systems;
+  "./syncthing/fly-key.age".publicKeys = users ++ [ fly ];
+  "./syncthing/husky-cert.age".publicKeys = users ++ systems;
+  "./syncthing/husky-key.age".publicKeys = users ++ [ husky ];
 }

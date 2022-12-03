@@ -19,6 +19,15 @@
     ];
   };
 
+  age.secrets.sync-husky-cert.file = ./secrets/syncthing/husky-cert.age;
+  age.secrets.sync-husky-key.file = ./secrets/syncthing/husky-key.age;
+  age.secrets.sync-husky-cert.owner = "cofob";
+  age.secrets.sync-husky-key.owner = "cofob";
+  services.syncthing = {
+    cert = config.age.secrets.sync-husky-cert.path;
+    key = config.age.secrets.sync-husky-key.path;
+  };
+
   networking.networkmanager.enable = true;
 
   networking = {

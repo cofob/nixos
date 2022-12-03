@@ -3,7 +3,7 @@
 {
   config = {
     services = {
-      ipfs = {
+      kubo = {
         enable = true;
         localDiscovery = true;
         enableGC = true;
