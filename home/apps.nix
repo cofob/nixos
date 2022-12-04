@@ -5,7 +5,9 @@
     kotatogram-desktop-with-webkit
     libreoffice-fresh
     transmission-gtk
-    element-desktop
+    nheko
+    gnome.geary
+    okular
     networkmanager_dmenu
     rofi
     plasma-systemmonitor
