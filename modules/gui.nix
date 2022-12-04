@@ -8,6 +8,7 @@
       enable = true;
       windowManager.i3.enable = true;
       windowManager.i3.configFile = ./configs/i3.txt;
+      desktopManager.plasma5.enable = true;
       displayManager.sddm.enable = true;
       xkbOptions = "grp:caps_toggle";
       layout = "us,ru";
