@@ -12,6 +12,9 @@
     rofi
     plasma-systemmonitor
     bitwarden
+    libsForQt5.powerdevil
+    libsForQt5.kgamma5
+    libsForQt5.kscreen
     gnome.eog
     megasync
     dolphin
