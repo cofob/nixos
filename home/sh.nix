@@ -109,7 +109,7 @@
     enable = true;
   };
 
-  programs.exa = {
+  programs.eza = {
     enable = true;
   };
 
@@ -123,15 +123,15 @@
   programs.zsh = {
     enable = true;
 
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
     autocd = true;
 
     shellAliases = {
-      ls = "${pkgs.exa}/bin/exa --icons";
-      la = "${pkgs.exa}/bin/exa --icons -la";
-      lt = "${pkgs.exa}/bin/exa --icons --tree";
+      ls = "${pkgs.eza}/bin/eza --icons";
+      la = "${pkgs.eza}/bin/eza --icons -la";
+      lt = "${pkgs.eza}/bin/eza --icons --tree";
 
       nixupd = ''sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "github:cofob/nixos"'';
       tnixupd = "sudo nixos-rebuild switch --flake . --fast";
