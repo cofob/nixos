@@ -6,7 +6,7 @@
   programs.home-manager.enable = true;
   home = {
     homeDirectory = "/home/cofob";
-    stateVersion = "22.05";
+    stateVersion = "23.11";
     username = "cofob";
   };
 
