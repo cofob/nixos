@@ -123,7 +123,7 @@
   programs.zsh = {
     enable = true;
 
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
     autocd = true;
