@@ -1,13 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [ ./mullvad.nix ];
-
-  options = {
-    defaultApplications = lib.mkOption {
-      type = lib.types.attrs;
-    };
-  };
+  options = { defaultApplications = lib.mkOption { type = lib.types.attrs; }; };
 
   config = {
     services = {
@@ -29,10 +23,8 @@
     xdg.mime = {
       enable = true;
       defaultApplications = with config.defaultApplications;
-        builtins.mapAttrs
-          (name: value:
-            if value ? desktop then [ "${value.desktop}.desktop" ] else value)
-          {
+        builtins.mapAttrs (name: value:
+          if value ? desktop then [ "${value.desktop}.desktop" ] else value) {
             "inode/directory" = fm;
             "text/html" = browser;
             "image/*" = { desktop = "org.gnome.eog"; };
@@ -144,19 +136,24 @@
       };
       devices = {
         huawei = {
-          id = "V3DPTUO-ESKOTAG-4QK5BH2-ZAVFNQI-RTLGIXX-KBYJ5NM-JPXGRDU-GTTOAQH";
+          id =
+            "V3DPTUO-ESKOTAG-4QK5BH2-ZAVFNQI-RTLGIXX-KBYJ5NM-JPXGRDU-GTTOAQH";
         };
         bear = {
-          id = "V4RGEPV-66RY2EP-DKMWW3J-ADAC7TD-CLYEEKM-XZ2YQFJ-AGCHHAP-CZ32XQB";
+          id =
+            "V4RGEPV-66RY2EP-DKMWW3J-ADAC7TD-CLYEEKM-XZ2YQFJ-AGCHHAP-CZ32XQB";
         };
         fly = {
-          id = "FP4SSU3-OZJLAY4-X25CHCU-TK34OZ3-CPY2CK6-CGPFJOS-H4VHSY2-5VTHSA5";
+          id =
+            "FP4SSU3-OZJLAY4-X25CHCU-TK34OZ3-CPY2CK6-CGPFJOS-H4VHSY2-5VTHSA5";
         };
         rat = {
-          id = "6HBRNZZ-G2AWAYD-4DEF6KC-HYNXAG7-WMXSEVO-4FGJHBX-BH2XMN2-CQTW7QI";
+          id =
+            "6HBRNZZ-G2AWAYD-4DEF6KC-HYNXAG7-WMXSEVO-4FGJHBX-BH2XMN2-CQTW7QI";
         };
         husky = {
-          id = "FEOUI4J-X7L42A5-37T5YIT-MWW7S2E-B6ORUXS-5OOTJRB-EAVL7QW-QFPK3QG";
+          id =
+            "FEOUI4J-X7L42A5-37T5YIT-MWW7S2E-B6ORUXS-5OOTJRB-EAVL7QW-QFPK3QG";
         };
       };
     };

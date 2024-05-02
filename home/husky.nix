@@ -1,4 +1,2 @@
-{
-  imports = [ ./common.nix ./gui.nix ./games.nix ];
-}
+{ imports = [ ./common.nix ./gui.nix ]; }
 

@@ -2,5 +2,4 @@
 
 ## Machines
 
- - Bear (pc)
- - Fly (laptop)
+ - Husky (main laptop)

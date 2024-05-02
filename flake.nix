@@ -6,106 +6,40 @@
 
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    flake-utils.url = "github:numtide/flake-utils";
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, flake-utils, agenix, ... }@attrs:
     {
-      nixosModules = {
-        home-headless = import ./home/common.nix;
-      };
-      # nixosConfigurations = {
-      #   bear = nixpkgs.lib.nixosSystem {
-      #     system = "x86_64-linux";
-      #     modules = [
-      #       ./bear.nix
-      #       home-manager.nixosModules.home-manager
-      #       nur.nixosModules.nur
-      #       agenix.nixosModule
-      #       {
-      #         environment.systemPackages = [ agenix.defaultPackage.x86_64-linux ];
-      #       }
-      #       {
-      #         home-manager.useGlobalPkgs = true;
-      #         home-manager.useUserPackages = true;
-      #         home-manager.users.cofob = import ./home/bear.nix;
-      #       }
-      #       ({ config, pkgs, ... }:
-      #         let
-      #           overlay-custom = final: prev: {
-      #             custom = import ./pkgs/top-level.nix { inherit pkgs; };
-      #           };
-      #         in
-      #         {
-      #           nixpkgs.overlays = [ overlay-custom ];
-      #         }
-      #       )
-      #       {
-      #         nixpkgs.overlays = [ nur.overlay pkgs-overlay.overlays.default ];
-      #       }
-      #     ];
-      #   };
+      nixosModules.home-headless = import ./home/headless.nix;
 
-      #   fly = nixpkgs.lib.nixosSystem {
-      #     system = "x86_64-linux";
-      #     modules = [
-      #       ./fly.nix
-      #       home-manager.nixosModules.home-manager
-      #       nur.nixosModules.nur
-      #       agenix.nixosModule
-      #       {
-      #         environment.systemPackages = [ agenix.defaultPackage.x86_64-linux ];
-      #       }
-      #       {
-      #         home-manager.useGlobalPkgs = true;
-      #         home-manager.useUserPackages = true;
-      #         home-manager.users.cofob = import ./home/fly.nix;
-      #       }
-      #       ({ config, pkgs, ... }:
-      #         let
-      #           overlay-custom = final: prev: {
-      #             custom = import ./pkgs/top-level.nix { inherit pkgs; };
-      #           };
-      #         in
-      #         {
-      #           nixpkgs.overlays = [ overlay-custom ];
-      #         }
-      #       )
-      #       {
-      #         nixpkgs.overlays = [ nur.overlay pkgs-overlay.overlays.default ];
-      #       }
-      #     ];
-      #   };
+      nixosConfigurations = builtins.mapAttrs (key: value:
+        (nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = attrs;
+          modules = [ ./machines/${key} ];
+        })) (builtins.readDir ./machines);
 
-      #   husky = nixpkgs.lib.nixosSystem {
-      #     system = "x86_64-linux";
-      #     modules = [
-      #       ./husky.nix
-      #       home-manager.nixosModules.home-manager
-      #       nur.nixosModules.nur
-      #       agenix.nixosModule
-      #       {
-      #         environment.systemPackages = [ agenix.defaultPackage.x86_64-linux ];
-      #       }
-      #       {
-      #         home-manager.useGlobalPkgs = true;
-      #         home-manager.useUserPackages = true;
-      #         home-manager.users.cofob = import ./home/husky.nix;
-      #       }
-      #       ({ config, pkgs, ... }:
-      #         let
-      #           overlay-custom = final: prev: {
-      #             custom = import ./pkgs/top-level.nix { inherit pkgs; };
-      #           };
-      #         in
-      #         {
-      #           nixpkgs.overlays = [ overlay-custom ];
-      #         }
-      #       )
-      #       {
-      #         nixpkgs.overlays = [ nur.overlay pkgs-overlay.overlays.default ];
-      #       }
-      #     ];
-      #   };
-      # };
-    };
+      overlays.default = final: prev: (import ./overlay.nix final attrs);
+    } // flake-utils.lib.eachSystem
+    (with flake-utils.lib.system; [ x86_64-linux i686-linux aarch64-linux ])
+    (system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      in {
+        devShells.default = pkgs.mkShell {
+          buildInputs = [ agenix.packages.${system}.default pkgs.nixfmt ];
+        };
+
+        packages = import ./overlay.nix pkgs attrs;
+      });
 }
