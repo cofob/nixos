@@ -5,6 +5,9 @@
   programs.waybar.enable = true;
   xdg.configFile."waybar/config".source = lib.mkForce ./configs/waybar.jsonh;
 
+  services.mako.enable = true;
+  services.mako.defaultTimeout = 5000;
+
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
