@@ -7,5 +7,11 @@
 
   services.gnome-keyring.enable = true;
 
-  home.packages = with pkgs; [ telegram-desktop spotify vesktop megasync ];
+  home.packages = with pkgs; [
+    xfce.thunar
+    telegram-desktop
+    spotify
+    vesktop
+    megasync
+  ];
 }

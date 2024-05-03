@@ -238,6 +238,8 @@ mode "launch" {
     bindsym c exec code ; mode "default"
     # Launch virt-manager
     bindsym z exec virt-manager ; mode "default"
+    # Launch thunar
+    bindsym f exec thunar ; mode "default"
 
     # Return to default mode
     bindsym Return mode "default"
