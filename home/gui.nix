@@ -9,6 +9,7 @@
 
   home.packages = with pkgs; [
     xfce.thunar
+    obs-studio
     telegram-desktop
     spotify
     vesktop
