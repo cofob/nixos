@@ -2,14 +2,17 @@
 
 {
 
-  fonts.fonts = with pkgs; [
-    fira-code-symbols
-    noto-fonts-emoji
-    noto-fonts-cjk
-    liberation_ttf
-    proggyfonts
+  fonts.packages = with pkgs; [
     noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
     fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
     dina-font
+    proggyfonts
+    monaspace
+    meslo-lgs-nf
   ];
 }
