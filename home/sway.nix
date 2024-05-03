@@ -10,4 +10,7 @@
     enableZshIntegration = true;
   };
   programs.fuzzel.enable = true;
+
+  # Add audio and brightness utils
+  home.packages = with pkgs; [ pulseaudio light ];
 }
