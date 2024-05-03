@@ -33,7 +33,6 @@
       let
         pkgs = import nixpkgs {
           inherit system;
-          config.allowUnfree = true;
         };
       in {
         devShells.default = pkgs.mkShell {
