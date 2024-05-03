@@ -6,6 +6,7 @@
     "${self}/modules/modules.nix"
     "${self}/modules/common.nix"
     "${self}/modules/boot.nix"
+    "${self}/modules/gui.nix"
     ./libvirt.nix
   ];
 
