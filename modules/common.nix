@@ -30,6 +30,7 @@
       automatic = true;
       dates = [ "weekly" ];
     };
+    channel.enable = false;
   };
 
   system.stateVersion = "23.11";
