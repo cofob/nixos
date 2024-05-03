@@ -10,69 +10,35 @@
     extensions = with pkgs.vscode-extensions;
       [
         bierner.emojisense
-        bradlc.vscode-tailwindcss
-        davidanson.vscode-markdownlint
-        dbaeumer.vscode-eslint
         editorconfig.editorconfig
-        esbenp.prettier-vscode
-        formulahendry.auto-rename-tag
         github.github-vscode-theme
+        github.vscode-github-actions
         github.vscode-pull-request-github
-        golang.go
-        jnoortheen.nix-ide
         matklad.rust-analyzer
-        mhutchie.git-graph
-        ms-ceintl.vscode-language-pack-ru
         ms-python.python
         ms-python.vscode-pylance
+        ms-python.black-formatter
+        ms-python.isort
+        tamasfe.even-better-toml
         shardulm94.trailing-spaces
-        svelte.svelte-vscode
         tyriar.sort-lines
         vadimcn.vscode-lldb
-        wix.vscode-import-cost
+        davidanson.vscode-markdownlint
         yzhang.markdown-all-in-one
+        mkhl.direnv
+        serayuzgur.crates
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
-          name = "todo-tree";
-          publisher = "Gruntfuggly";
-          version = "0.0.219";
-          sha256 = "hV92FSwoIShvoVCxIR4h7qAFAZITE3L1mxNrWkd0y8Y=";
+          name = "codeium";
+          publisher = "Codeium";
+          version = "1.8.28";
+          sha256 = "sha256-BIxI8QZUiebMzI+KYyrIoe2rBygI71O2ahbg2cPidno=";
         }
         {
-          name = "copilot-nightly";
-          publisher = "github";
-          version = "1.55.7138";
-          sha256 = "5tRhQpca+/OD7ZXvBQXt87E13aCtTn7oNHkI///gr0Q=";
-        }
-        {
-          name = "direnv";
-          publisher = "mkhl";
-          version = "0.6.1";
-          sha256 = "5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
-        }
-        {
-          name = "better-toml";
-          publisher = "bungcip";
-          version = "0.3.2";
-          sha256 = "g+LfgjAnSuSj/nSmlPdB0t29kqTmegZB5B1cYzP8kCI=";
-        }
-        {
-          name = "crates";
-          publisher = "serayuzgur";
-          version = "0.5.10";
-          sha256 = "bY/dphiEPPgTg1zMjvxx4b0Ska2XggRucnZxtbppcLU=";
-        }
-        {
-          name = "inline-fold";
-          publisher = "moalamri";
-          version = "0.1.10";
-          sha256 = "HTqlY790lS+L6yWfDV27VhLNHu4TMzwVNiP8cNzDTjM=";
-        }
-        {
-          name = "codespaces";
-          publisher = "GitHub";
-          version = "1.13.1";
-          sha256 = "eOXFiSJ396qfDGS2MYEY1nzGmB85p/+FIWpKQ0OnF4c=";
+          name = "mypy-type-checker";
+          publisher = "ms-python";
+          version = "2023.6.0";
+          sha256 = "sha256-uL/iHtBX5sSnkM5fVlMRWEtspNcirirjp9O5ScW039c=";
         }
       ];
     userSettings = {
