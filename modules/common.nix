@@ -32,15 +32,7 @@
     };
   };
 
-  system = {
-    stateVersion = "23.11";
-    #    autoUpgrade = {
-    #      enable = true;
-    #      allowReboot = false;
-    #      flake = "github:cofob/nixos";
-    #      dates = "4:45";
-    #    };
-  };
+  system.stateVersion = "23.11";
 
   security.sudo.wheelNeedsPassword = false;
 

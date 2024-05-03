@@ -6,5 +6,6 @@
       "vscode"
       "vscode-extension-MS-python-vscode-pylance"
       "spotify"
+      "megasync"
     ];
 }

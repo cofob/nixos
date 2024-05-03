@@ -5,5 +5,5 @@
 
   fonts.fontconfig.enable = true;
 
-  home.packages = with pkgs; [ telegram-desktop spotify vesktop ];
+  home.packages = with pkgs; [ telegram-desktop spotify vesktop megasync ];
 }

@@ -2,5 +2,5 @@
 
 {
   imports =
-    [ agenix.nixosModules.default home-manager.nixosModules.home-manager ];
+    [ agenix.nixosModules.default home-manager.nixosModules.home-manager ./docker.nix ];
 }

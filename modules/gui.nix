@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  imports = [ ./sound.nix ];
 
   fonts.packages = with pkgs; [
     noto-fonts
