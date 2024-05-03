@@ -40,6 +40,12 @@
           version = "2023.6.0";
           sha256 = "sha256-uL/iHtBX5sSnkM5fVlMRWEtspNcirirjp9O5ScW039c=";
         }
+        {
+          name = "Nix";
+          publisher = "bbenoist";
+          version = "1.0.1";
+          sha256 = "sha256-qwxqOGublQeVP2qrLF94ndX/Be9oZOn+ZMCFX1yyoH0=";
+        }
       ];
     userSettings = {
       # Suggest faster
