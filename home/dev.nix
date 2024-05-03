@@ -89,7 +89,7 @@
       "python.linting.pydocstyleEnabled" = true;
       "python.linting.pydocstylePath" =
         "${pkgs.python3Packages.pydocstyle}/bin/pydocstyle";
-      "python.formatting.blackArgs" = [ "-l120" "-tpy310" ];
+      "python.formatting.blackArgs" = [ "-l120" "-tpy311" ];
       "python.languageServer" = "Pylance";
       "python.sortImports.path" = "${pkgs.python3Packages.isort}/bin/isort";
       "python.formatting.provider" = "black";
