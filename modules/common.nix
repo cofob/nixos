@@ -1,8 +1,6 @@
 { self, config, lib, pkgs, ... }:
 
 {
-  imports = [ ./unfree-pkgs.nix ];
-
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "mem_sleep_default=deep" ]; # Enable hibernation
   boot.readOnlyNixStore = true;

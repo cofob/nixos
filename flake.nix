@@ -23,7 +23,7 @@
         (nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = attrs;
-          modules = [ ./machines/${key} ];
+          modules = [ ./modules/modules.nix ./machines/${key} ];
         })) (builtins.readDir ./machines);
 
       overlays.default = final: prev: (import ./overlay.nix final attrs);

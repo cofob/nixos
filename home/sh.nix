@@ -1,6 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
+  home.packages = with pkgs; [ manix comma nix-index ranger ];
+
   programs.bash.enable = true;
   programs.bash.initExtra = ''
     if [[ "$(tty)" != /dev/tty* && $(ps --no-header --pid=$PPID --format=comm) != "zsh" && -z $BASH_EXECUTION_STRING ]]; then
@@ -82,13 +84,9 @@
         sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "github:cofob/nixos"'';
       tnixupd = "sudo nixos-rebuild switch --flake . --fast";
       tnix = "nixos-rebuild dry-build --flake .";
-      nixclear = "sudo nix-store --gc && sudo nix-collect-garbage -d && nixupd";
       find_port = "sudo netstat -tulnp | grep";
       find_proc = "sudo ps -aux | grep";
       shell = "nix-shell --run 'zsh' -p";
-      brightness = "xrandr --output eDP-1 --brightness";
-
-      please = "sudo";
     };
 
     oh-my-zsh = {

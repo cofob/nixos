@@ -1,7 +1,6 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  config = {
     services.dnscrypt-proxy2 = {
       enable = true;
       settings = {
@@ -23,6 +22,5 @@
       networkmanager.dns = "none";
     };
     environment.systemPackages = [ pkgs.dig ];
-  };
 }
 

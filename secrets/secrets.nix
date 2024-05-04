@@ -6,4 +6,6 @@ let
   husky =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFrYiKbERa6EiZHSBBQvjME2qAMowHimuXb+KOUS8Rn";
   systems = [ husky ];
-in { "./passwords/cofob.age".publicKeys = users ++ systems; }
+
+  all = users ++ systems;
+in { "./passwords/cofob.age".publicKeys = all; }

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./apps.nix ./dev.nix ./sway.nix ];
+  imports = [ ./apps.nix ./sway.nix ];
 
   fonts.fontconfig.enable = true;
 
@@ -10,9 +10,6 @@
   programs.mpv.enable = true;
 
   home.packages = with pkgs; [
-    manix
-    comma
-    nix-index
     deluge
     xfce.thunar
     obs-studio

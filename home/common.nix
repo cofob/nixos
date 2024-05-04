@@ -16,6 +16,4 @@
     enableSshSupport = true;
     enable = true;
   };
-
-  home.packages = with pkgs; [ gnupg ];
 }
