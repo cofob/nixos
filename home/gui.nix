@@ -8,6 +8,8 @@
   services.gnome-keyring.enable = true;
 
   home.packages = with pkgs; [
+    manix
+    deluge
     xfce.thunar
     obs-studio
     telegram-desktop

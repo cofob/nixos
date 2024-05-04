@@ -51,6 +51,7 @@
       '';
     in [
       upgrade-system
+      comma
       git
       vim
       htop
@@ -60,6 +61,7 @@
       pastebinit
       wget
       ffsend
+      zip
       unzip
     ];
 
