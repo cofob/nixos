@@ -10,6 +10,9 @@
   programs.mpv.enable = true;
 
   home.packages = with pkgs; [
+    # CLI
+    feh
+    # GUI
     deluge
     xfce.thunar
     obs-studio
