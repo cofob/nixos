@@ -7,6 +7,8 @@
 
   services.gnome-keyring.enable = true;
 
+  programs.mpv.enable = true;
+
   home.packages = with pkgs; [
     manix
     comma

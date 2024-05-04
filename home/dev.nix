@@ -115,6 +115,7 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
+    delta.enable = true;
     userName = "cofob";
     userEmail = "cofob@riseup.net";
     extraConfig = {
@@ -127,5 +128,10 @@
       pull.rebase = true;
       url = { "git@github.com:" = { insteadOf = [ "gh:" ]; }; };
     };
+  };
+
+  programs.gh = {
+    enable = true;
+    settings.git_protocol = "ssh";
   };
 }
