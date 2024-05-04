@@ -39,6 +39,14 @@
           buildInputs = [ agenix.packages.${system}.default pkgs.nixfmt ];
         };
 
-        packages = import ./overlay.nix pkgs attrs;
+        packages = {
+          system-cache = pkgs.stdenv.mkDerivation {
+            pname = "system-cache";
+            version = "0.1.0";
+            buildInputs = builtins.map (s: s.config.system.build.toplevel) (builtins.attrValues self.nixosConfigurations);
+            phases = [ "installPhase" ];
+            installPhase = "echo 'system-cache' > $out";
+          };
+        } // (import ./overlay.nix pkgs attrs);
       });
 }
