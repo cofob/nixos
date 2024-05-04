@@ -30,7 +30,6 @@
       automatic = true;
       dates = [ "weekly" ];
     };
-    channel.enable = false;
   };
 
   system.stateVersion = "23.11";
@@ -44,6 +43,13 @@
     };
   };
 
+  programs.bash.interactiveShellInit = ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  '';
+  programs.zsh.interactiveShellInit = ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  '';
+
   environment.systemPackages = with pkgs;
     let
       upgrade-system = pkgs.writeScriptBin "upgrade-system" ''
@@ -51,7 +57,7 @@
       '';
     in [
       upgrade-system
-      comma
+      nix-index
       git
       vim
       htop

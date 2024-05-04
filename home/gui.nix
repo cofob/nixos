@@ -9,6 +9,8 @@
 
   home.packages = with pkgs; [
     manix
+    comma
+    nix-index
     deluge
     xfce.thunar
     obs-studio
