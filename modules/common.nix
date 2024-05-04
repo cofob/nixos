@@ -13,6 +13,16 @@
       trusted-users = [ "@wheel" ];
       allowed-users = [ "@wheel" ];
       auto-optimise-store = true;
+      substituters = [
+        "https://cache.nixos.org"
+        "https://nix-community.cachix.org"
+        "https://cofob.cachix.org"
+      ];
+      trusted-public-keys = [
+        "hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "cofob.cachix.org-1:pLP85fVQ2T+bbaggvq03aDdXbQWjY36Gkch14N8mus4="
+      ];
     };
     extraOptions = ''
       experimental-features = nix-command flakes
