@@ -30,10 +30,7 @@
     } // flake-utils.lib.eachSystem
     (with flake-utils.lib.system; [ x86_64-linux i686-linux aarch64-linux ])
     (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-        };
+      let pkgs = import nixpkgs { inherit system; };
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = [ agenix.packages.${system}.default pkgs.nixfmt ];
@@ -43,7 +40,8 @@
           system-cache = pkgs.stdenv.mkDerivation {
             pname = "system-cache";
             version = "0.1.0";
-            buildInputs = builtins.map (s: s.config.system.build.toplevel) (builtins.attrValues self.nixosConfigurations);
+            buildInputs = builtins.map (s: s.config.system.build.toplevel)
+              (builtins.attrValues self.nixosConfigurations);
             phases = [ "installPhase" ];
             installPhase = "echo 'system-cache' > $out";
           };
