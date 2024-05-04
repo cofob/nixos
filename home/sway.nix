@@ -23,6 +23,7 @@
       return config
     '';
   };
+  programs.zsh.shellAliases.imgcat = "wezterm imgcat";
   programs.fuzzel.enable = true;
 
   home.packages = let
