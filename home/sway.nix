@@ -13,7 +13,10 @@
     enableZshIntegration = true;
     extraConfig = ''
       local config = {}
-      config.font = wezterm.font 'Monaspace Neon'
+      config.font = wezterm.font {
+        family = 'Monaspace Neon',
+        harfbuzz_features = { 'calt=1', 'dlig=1', 'liga=1', 'ss01=1', 'ss02=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1' },
+      }
       config.enable_tab_bar = false
       config.hide_mouse_cursor_when_typing = false
       config.color_scheme = 'DimmedMonokai'
