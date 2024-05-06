@@ -3,6 +3,9 @@
 {
   imports = [ ./sound.nix ];
 
+  services.xserver.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
