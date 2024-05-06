@@ -110,6 +110,9 @@
       "python.poetryPath" = "${pkgs.poetry}/bin/poetry";
 
       "editor.inlineSuggest.enabled" = true;
+
+      # Other
+      "redhat.telemetry.enabled" = false;
     };
   };
 
