@@ -27,6 +27,7 @@
         yzhang.markdown-all-in-one
         mkhl.direnv
         serayuzgur.crates
+        redhat.vscode-yaml
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "codeium";
