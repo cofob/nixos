@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./sh.nix ];
+  imports = [ ./sh.nix ./overlays.nix ];
 
   programs.home-manager.enable = true;
   home = {

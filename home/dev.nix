@@ -14,7 +14,6 @@
         github.github-vscode-theme
         github.vscode-github-actions
         github.vscode-pull-request-github
-        matklad.rust-analyzer
         ms-python.python
         ms-python.vscode-pylance
         ms-python.black-formatter
@@ -28,7 +27,8 @@
         mkhl.direnv
         serayuzgur.crates
         redhat.vscode-yaml
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      ] ++ (with pkgs.unstable.vscode-extensions; [ matklad.rust-analyzer ])
+      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "codeium";
           publisher = "Codeium";
