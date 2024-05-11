@@ -7,5 +7,6 @@
       "vscode-extension-MS-python-vscode-pylance"
       "spotify"
       "megasync"
+      "zerotierone"
     ];
 }

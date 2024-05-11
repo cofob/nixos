@@ -18,6 +18,11 @@
 
   networking.hostName = "husky";
 
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [ "e4da7455b237c59e" ];
+  };
+
   virtualisation.docker.enable = true;
 
   # Enable networking
