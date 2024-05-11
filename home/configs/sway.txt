@@ -98,7 +98,7 @@ input type:keyboard {
     # Lock session
     bindsym $mod+Shift+Ctrl+l exec swaylock -f -c 000000
     # Hibernation
-    bindsym $mod+Shift+Ctrl+s exec systemctl hibernate
+    bindsym $mod+Shift+Ctrl+s exec sudo systemctl hibernate
 #
 # Moving around:
 #
