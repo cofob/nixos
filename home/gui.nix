@@ -13,6 +13,7 @@
     # CLI
     feh
     # GUI
+    pavucontrol
     deluge
     xfce.thunar
     obs-studio
