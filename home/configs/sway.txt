@@ -99,6 +99,8 @@ input type:keyboard {
     bindsym $mod+Shift+Ctrl+l exec swaylock -f -c 000000
     # Hibernation
     bindsym $mod+Shift+Ctrl+s exec sudo systemctl hibernate
+    # Open hackspace door
+    bindsym $mod+Shift+Ctrl+h+o exec swaynag -t warning -m 'You pressed the open space shortcut. Do you really want to open door?' -B 'Yes, open door' 'cd /home/cofob/Development/auto-open-door && /home/cofob/Development/auto-open-door/open.py'
 #
 # Moving around:
 #
