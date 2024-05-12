@@ -33,8 +33,6 @@
     enable = true;
   };
 
-  programs.eza = { enable = true; };
-
   programs.direnv = {
     enableZshIntegration = true;
     enable = true;
@@ -76,10 +74,6 @@
     autocd = true;
 
     shellAliases = {
-      ls = "${pkgs.eza}/bin/eza --icons";
-      la = "${pkgs.eza}/bin/eza --icons -la";
-      lt = "${pkgs.eza}/bin/eza --icons --tree";
-
       nixupd = ''
         sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "github:cofob/nixos"'';
       tnixupd = "sudo nixos-rebuild switch --flake . --fast";
