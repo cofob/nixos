@@ -28,8 +28,7 @@
         serayuzgur.crates
         redhat.vscode-yaml
         matklad.rust-analyzer
-      ]
-      ++ pkgs.unstable.vscode-utils.extensionsFromVscodeMarketplace [
+      ] ++ pkgs.unstable.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "codeium";
           publisher = "Codeium";
