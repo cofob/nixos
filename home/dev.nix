@@ -113,6 +113,12 @@
 
       # Other
       "redhat.telemetry.enabled" = false;
+
+      # Enable codeium for Nix
+      "codeium.enableConfig" = {
+        "*" = true;
+        "nix" = true;
+      };
     };
   };
 
