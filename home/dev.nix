@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs.unstable; [ codeium ];
+  home.packages = with pkgs.unstable; [ codeium python3Packages.jedi ];
 
   programs.vscode = {
     enable = true;
@@ -15,7 +15,6 @@
         github.vscode-github-actions
         github.vscode-pull-request-github
         ms-python.python
-        ms-python.vscode-pylance
         ms-python.black-formatter
         ms-python.isort
         tamasfe.even-better-toml
@@ -97,7 +96,7 @@
       "python.linting.pydocstylePath" =
         "${pkgs.python3Packages.pydocstyle}/bin/pydocstyle";
       "python.formatting.blackArgs" = [ "-l120" "-tpy311" ];
-      "python.languageServer" = "Pylance";
+      "python.languageServer" = "Jedi";
       "python.sortImports.path" = "${pkgs.python3Packages.isort}/bin/isort";
       "python.formatting.provider" = "black";
       "python.formatting.blackPath" = "${pkgs.black}/bin/black";

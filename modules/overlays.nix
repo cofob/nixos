@@ -6,11 +6,7 @@
       unstable = import nixpkgs-unstable {
         system = pkgs.system;
         config.allowUnfreePredicate = pkg:
-          builtins.elem (lib.getName pkg) [
-            "vscode"
-            "vscode-extension-MS-python-vscode-pylance"
-            "codeium"
-          ];
+          builtins.elem (lib.getName pkg) [ "vscode" "codeium" ];
       };
     })
 
