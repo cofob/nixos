@@ -5,9 +5,9 @@
 
   programs.vscode = {
     enable = true;
-    package = pkgs.unstable.vscode;
+    package = pkgs.vscode;
     mutableExtensionsDir = false;
-    extensions = with pkgs.unstable.vscode-extensions;
+    extensions = with pkgs.vscode-extensions;
       [
         bierner.emojisense
         editorconfig.editorconfig
@@ -27,8 +27,8 @@
         mkhl.direnv
         serayuzgur.crates
         redhat.vscode-yaml
-        matklad.rust-analyzer
-      ] ++ pkgs.unstable.vscode-utils.extensionsFromVscodeMarketplace [
+      ] ++ (with pkgs.unstable.vscode-extensions; [ matklad.rust-analyzer ])
+      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "codeium";
           publisher = "Codeium";
