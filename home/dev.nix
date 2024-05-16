@@ -108,6 +108,7 @@
       "python.testing.pytestPath" = "${pkgs.python3Packages.pytest}/bin/pytest";
       "python.venvPath" = "~/.cache/pypoetry/virtualenvs";
       "python.poetryPath" = "${pkgs.poetry}/bin/poetry";
+      "python.analysis.autoImportCompletions" = true;
 
       "editor.inlineSuggest.enabled" = true;
 
