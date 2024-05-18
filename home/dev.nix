@@ -62,8 +62,7 @@
       "editor.tabSize" = 2;
 
       # Enable ligatures
-      "editor.fontLigatures" =
-        "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07'";
+      "editor.fontLigatures" = "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04'";
       "editor.fontFamily" = "'Monaspace Neon', monospace";
 
       # Git settings
