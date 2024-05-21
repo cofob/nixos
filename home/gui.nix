@@ -21,5 +21,6 @@
     spotify
     vesktop
     megasync
+    wdisplays
   ];
 }
