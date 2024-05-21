@@ -27,6 +27,7 @@
         mkhl.direnv
         serayuzgur.crates
         redhat.vscode-yaml
+        hashicorp.terraform
       ] ++ (with pkgs.unstable.vscode-extensions; [ matklad.rust-analyzer ])
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
