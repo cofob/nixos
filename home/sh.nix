@@ -81,6 +81,7 @@
       find_port = "sudo netstat -tulnp | grep";
       find_proc = "sudo ps -aux | grep";
       shell = "nix-shell --run 'zsh' -p";
+      upload-to-s3 = "/home/cofob/Development/upload-to-s3/upload_to_s3.py";
     };
 
     oh-my-zsh = {
