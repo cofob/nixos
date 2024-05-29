@@ -70,11 +70,11 @@
       "git.enableSmartCommit" = true;
       "git.branchPrefix" = "cofob/";
       "git.confirmSync" = false;
-      "git.autofetch" = true;
+      "git.autofetch" = false;
       "git.autoStash" = true;
       "git.branchProtection" = [ "master" "main" ];
       "git.branchRandomName.enable" = true;
-      "git.fetchOnPull" = true;
+      "git.fetchOnPull" = false;
       "git.mergeEditor" = true;
 
       # Set editor theme
