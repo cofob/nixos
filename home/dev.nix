@@ -132,7 +132,7 @@
     extraConfig = {
       init.defaultBranch = "main";
       core.editor = "vim";
-      user.signingkey = "5F3D9D3DECE08651DE14D29FACAD4265E193794D";
+      user.signingkey = "04EEF0BA3B857B065A326067341A36929AC4AC29";
       commit.gpgsign = true;
       tag.gpgsign = true;
       push.autoSetupRemote = true;
