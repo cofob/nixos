@@ -15,6 +15,9 @@
   boot.initrd.luks.devices."luks-27dd98e6-c1e2-4032-8eb9-384ce751e907".device =
     "/dev/disk/by-uuid/27dd98e6-c1e2-4032-8eb9-384ce751e907";
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "mem_sleep_default=deep" ]; # Enable hibernation
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c0e02bda-0add-49b7-8a71-1a73f85ebf47";
     fsType = "ext4";
