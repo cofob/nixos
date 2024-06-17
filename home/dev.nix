@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs.unstable; [ codeium super-slicer-latest ];
+  home.packages = with pkgs.unstable; [ codeium cura ];
 
   programs.vscode = {
     enable = true;
