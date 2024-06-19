@@ -88,8 +88,6 @@
       enable = true;
       plugins = [
         "zsh-interactive-cd"
-        "git-auto-fetch"
-        "docker-compose"
         "docker"
         "git"
         "z"
