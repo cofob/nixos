@@ -86,12 +86,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [
-        "zsh-interactive-cd"
-        "docker"
-        "git"
-        "z"
-      ];
+      plugins = [ "zsh-interactive-cd" "docker" "git" "z" ];
     };
 
     plugins = [

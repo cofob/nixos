@@ -26,5 +26,6 @@
     vesktop
     megasync
     wdisplays
+    yubikey-waybar
   ];
 }

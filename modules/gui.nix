@@ -3,6 +3,8 @@
 {
   imports = [ ./sound.nix ];
 
+  programs.yubikey-touch-detector.enable = true;
+
   services.xserver.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
