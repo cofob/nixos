@@ -1,7 +1,14 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs; [ manix comma nix-index ranger ];
+  home.packages = with pkgs; [
+    manix
+    comma
+    nix-index
+    ranger
+    python312
+    python312Packages.ipython
+  ];
 
   programs.bash.enable = true;
   programs.bash.initExtra = ''
