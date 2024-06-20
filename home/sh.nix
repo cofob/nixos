@@ -8,6 +8,7 @@
     ranger
     python312
     python312Packages.ipython
+    py3env
   ];
 
   programs.bash.enable = true;
