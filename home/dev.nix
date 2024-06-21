@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs.unstable; [ codeium cura ];
+  home.packages = with pkgs.unstable; [ codeium cura ] ++ [ pkgs.dbeaver-bin ];
 
   programs.vscode = {
     enable = true;
