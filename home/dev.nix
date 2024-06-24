@@ -136,8 +136,11 @@
       user.signingkey = "04EEF0BA3B857B065A326067341A36929AC4AC29";
       commit.gpgsign = true;
       tag.gpgsign = true;
+      push.gpgsign = "if-asked";
       push.autoSetupRemote = true;
       pull.rebase = true;
+      rerere.enabled = true;
+      alias.force-push = "push --force-with-lease";
       url = { "git@github.com:" = { insteadOf = [ "gh:" ]; }; };
     };
   };
