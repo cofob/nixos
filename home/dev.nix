@@ -30,8 +30,8 @@
         serayuzgur.crates
         redhat.vscode-yaml
         hashicorp.terraform
-      ] ++ (with pkgs.unstable.vscode-extensions; [ matklad.rust-analyzer ])
-      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        rust-lang.rust-analyzer
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "mypy-type-checker";
           publisher = "ms-python";

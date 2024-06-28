@@ -5,7 +5,8 @@
     (final: prev: {
       unstable = import nixpkgs-unstable {
         system = pkgs.system;
-        config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "gh-copilot" ];
+        config.allowUnfreePredicate = pkg:
+          builtins.elem (lib.getName pkg) [ "gh-copilot" ];
       };
     })
 
