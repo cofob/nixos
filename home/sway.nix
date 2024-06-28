@@ -5,6 +5,9 @@
   programs.waybar.enable = true;
   xdg.configFile."waybar/config".source = lib.mkForce ./configs/waybar.jsonh;
 
+  # Enable apps autostart
+  wayland.windowManager.sway.systemd.xdgAutostart = true;
+
   services.mako.enable = true;
   services.mako.defaultTimeout = 5000;
 

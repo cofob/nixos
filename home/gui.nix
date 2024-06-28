@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./apps.nix ./sway.nix ];
+  imports = [ ./apps.nix ./sway.nix ./autostart.nix ];
 
   fonts.fontconfig.enable = true;
 
