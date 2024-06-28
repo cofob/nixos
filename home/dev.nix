@@ -1,7 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs.unstable; [ codeium cura gitbutler ] ++ [ pkgs.dbeaver-bin ];
+  home.packages = with pkgs.unstable;
+    [ gh-copilot cura ] ++ (with pkgs; [ dbeaver-bin ]);
 
   programs.vscode = {
     enable = true;
@@ -14,6 +15,7 @@
         github.github-vscode-theme
         github.vscode-github-actions
         github.vscode-pull-request-github
+        github.copilot
         ms-python.python
         ms-python.vscode-pylance
         ms-python.black-formatter
@@ -30,12 +32,6 @@
         hashicorp.terraform
       ] ++ (with pkgs.unstable.vscode-extensions; [ matklad.rust-analyzer ])
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "codeium";
-          publisher = "Codeium";
-          version = "1.8.28";
-          sha256 = "sha256-BIxI8QZUiebMzI+KYyrIoe2rBygI71O2ahbg2cPidno=";
-        }
         {
           name = "mypy-type-checker";
           publisher = "ms-python";
@@ -115,12 +111,6 @@
 
       # Other
       "redhat.telemetry.enabled" = false;
-
-      # Enable codeium for Nix
-      "codeium.enableConfig" = {
-        "*" = true;
-        "nix" = true;
-      };
     };
   };
 

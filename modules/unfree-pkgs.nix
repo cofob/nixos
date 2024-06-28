@@ -8,5 +8,6 @@
       "zerotierone"
       "vscode"
       "vscode-extension-MS-python-vscode-pylance"
+      "vscode-extension-github-copilot"
     ];
 }
