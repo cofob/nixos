@@ -14,8 +14,6 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    flake-compat.url = "github:edolstra/flake-compat";
   };
 
   outputs = { self, nixpkgs, flake-utils, agenix, ... }@attrs:
