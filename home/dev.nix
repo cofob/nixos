@@ -42,7 +42,7 @@
           name = "flake8";
           publisher = "ms-python";
           version = "2023.10.0";
-          sha256 = "";
+          sha256 = "sha256-4Vjw8yJPrxLg0hcoTw8AEBEcmQ9sEUNqFaHLxICks0E=";
         }
         {
           name = "copilot-chat";
