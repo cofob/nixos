@@ -2,6 +2,14 @@
 
 {
   home.packages = with pkgs; [
+    git
+    vim
+    htop
+    ncdu
+    tmux
+    ffsend
+    zip
+    unzip
     manix
     comma
     nix-index
