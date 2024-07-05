@@ -21,6 +21,7 @@
   outputs = { self, nixpkgs, flake-utils, agenix, ... }@attrs:
     {
       nixosModules.home-headless = import ./home/headless.nix;
+      nixosModules.home-nixless = import ./home/nizless.nix;
 
       nixosConfigurations = builtins.mapAttrs (key: value:
         (nixpkgs.lib.nixosSystem {
