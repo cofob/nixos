@@ -1,7 +1,4 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -i bash -p nixfmt coreutils
-#!nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/383ffe076d9b633a2e97b6e4dd97fc15fcf30159.tar.gz
-#
+#!/usr/bin/env bash
 # nixfmt doesnt work properly with direnv. This scripts saves direnv folder to temporarty location before executing
 # nixfmt, and then returns it back.
 
