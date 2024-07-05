@@ -31,7 +31,7 @@
         redhat.vscode-yaml
         hashicorp.terraform
         rust-lang.rust-analyzer
-      ] ++ a= pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "mypy-type-checker";
           publisher = "ms-python";
