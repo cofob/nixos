@@ -99,10 +99,10 @@
       # Python
       "python.languageServer" = "Pylance";
       "python.defaultInterpreterPath" = "${pkgs.python3}/bin/python";
-      "mypy-type-checker.path" = ["${pkgs.mypy}/bin/mypy"];
+      "mypy-type-checker.path" = [ "${pkgs.mypy}/bin/mypy" ];
       "mypy-type-checker.preferDaemon" = true;
-      "isort.path" = ["${pkgs.python3Packages.isort}/bin/isort"];
-      "black-formatter.path" = ["${pkgs.black}/bin/black"];
+      "isort.path" = [ "${pkgs.python3Packages.isort}/bin/isort" ];
+      "black-formatter.path" = [ "${pkgs.black}/bin/black" ];
       "black-formatter.args" = [ "-l120" "-tpy311" ];
       "python.testing.pytestEnabled" = true;
       "python.testing.pytestPath" = "${pkgs.python3Packages.pytest}/bin/pytest";
