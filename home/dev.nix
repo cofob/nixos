@@ -31,12 +31,24 @@
         redhat.vscode-yaml
         hashicorp.terraform
         rust-lang.rust-analyzer
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      ] ++ a= pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "mypy-type-checker";
           publisher = "ms-python";
           version = "2023.6.0";
           sha256 = "sha256-uL/iHtBX5sSnkM5fVlMRWEtspNcirirjp9O5ScW039c=";
+        }
+        {
+          name = "flake8";
+          publisher = "ms-python";
+          version = "2023.10.0";
+          sha256 = "";
+        }
+        {
+          name = "copilot-chat";
+          publisher = "GitHub";
+          version = "0.17.0";
+          sha256 = "";
         }
         {
           name = "Nix";
@@ -85,22 +97,13 @@
       "editor.formatOnType" = true;
 
       # Python
-      "python.defaultInterpreterPath" = "${pkgs.python3}/bin/python";
-      "python.linting.flake8Enabled" = false;
-      "python.linting.flake8Path" = "${pkgs.python3Packages.flake8}/bin/flake8";
-      "python.linting.mypyEnabled" = true;
-      "python.linting.mypyPath" = "${pkgs.mypy}/bin/mypy";
-      "python.linting.pydocstyleEnabled" = true;
-      "python.linting.pydocstylePath" =
-        "${pkgs.python3Packages.pydocstyle}/bin/pydocstyle";
-      "python.formatting.blackArgs" = [ "-l120" "-tpy311" ];
       "python.languageServer" = "Pylance";
-      "python.sortImports.path" = "${pkgs.python3Packages.isort}/bin/isort";
-      "python.formatting.provider" = "black";
-      "python.formatting.blackPath" = "${pkgs.black}/bin/black";
-      "python.formatting.autopep8Path" =
-        "${pkgs.python3Packages.autopep8}/bin/autopep8";
-      "python.formatting.yapfPath" = "${pkgs.yapf}/bin/yapf";
+      "python.defaultInterpreterPath" = "${pkgs.python3}/bin/python";
+      "mypy-type-checker.path" = ["${pkgs.mypy}/bin/mypy"];
+      "mypy-type-checker.preferDaemon" = true;
+      "isort.path" = ["${pkgs.python3Packages.isort}/bin/isort"];
+      "black-formatter.path" = ["${pkgs.black}/bin/black"];
+      "black-formatter.args" = [ "-l120" "-tpy311" ];
       "python.testing.pytestEnabled" = true;
       "python.testing.pytestPath" = "${pkgs.python3Packages.pytest}/bin/pytest";
       "python.venvPath" = "~/.cache/pypoetry/virtualenvs";
@@ -111,6 +114,7 @@
 
       # Other
       "redhat.telemetry.enabled" = false;
+      "telemetry.telemetryLevel" = "off";
     };
   };
 
