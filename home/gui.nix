@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   imports = [ ./apps.nix ./sway.nix ./autostart.nix ./gpg.nix ];
@@ -9,19 +9,20 @@
 
   programs.mpv.enable = true;
 
-  home.packages = with pkgs; [
-    # CLI
-    feh
-    # GUI
-    pavucontrol
-    deluge
-    xfce.thunar
-    obs-studio
-    telegram-desktop
-    spotify
-    vesktop
-    megasync
-    wdisplays
-    yubikey-waybar
-  ];
+  home.packages = with pkgs;
+    [
+      # CLI
+      feh
+      # GUI
+      pavucontrol
+      deluge
+      xfce.thunar
+      obs-studio
+      telegram-desktop
+      vesktop
+      megasync
+      wdisplays
+      yubikey-waybar
+    ]
+    ++ (if pkgs.system == "x86_64-linux" then [ spotify ] else [ spotify-qt ]);
 }
