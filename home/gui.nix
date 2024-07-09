@@ -20,9 +20,11 @@
       obs-studio
       telegram-desktop
       vesktop
-      megasync
       wdisplays
       yubikey-waybar
-    ]
-    ++ (if pkgs.system == "x86_64-linux" then [ spotify ] else [ spotify-qt ]);
+    ] ++ (if pkgs.system == "x86_64-linux" then [
+      spotify
+      megasync
+    ] else
+      [ spotify-qt ]);
 }
