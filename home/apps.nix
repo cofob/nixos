@@ -5,9 +5,17 @@
 
   programs.firefox = {
     enable = true;
-    # profiles = {
-    #   default = {
-    #     isDefault = true;
+    profiles = {
+      default = {
+        isDefault = true;
+        userChrome = ''
+          #TabsToolbar
+          {
+              visibility: collapse;
+          }
+        '';
+      };
+    };
     #     settings = {
     #       # Disable "about:config" warn
     #       "browser.aboutConfig.showWarning" = false;
