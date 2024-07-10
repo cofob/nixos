@@ -26,6 +26,8 @@
 
   networking.hostName = "twinkpad";
 
+  services.openssh.enable = true;
+
   services.zerotierone = {
     enable = true;
     joinNetworks = [ "e4da7455b237c59e" ];
