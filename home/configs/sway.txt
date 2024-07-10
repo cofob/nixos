@@ -42,7 +42,7 @@ exec swayidle -w \
 #
 ### Input configuration
 #
-input "1267:12799:PNP0C50:00_04F3:31FF_Touchpad" {
+input type:touchpad {
     natural_scroll enabled
 }
 
