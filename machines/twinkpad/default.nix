@@ -41,4 +41,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
+
+  # Open ssh port
+  networking.firewall.interfaces.ztwfuehebm.allowedTCPPorts = [ 22 ];
 }

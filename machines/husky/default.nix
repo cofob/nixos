@@ -30,4 +30,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
   users.users.cofob.extraGroups = [ "networkmanager" ];
+
+  # Open ssh port
+  networking.firewall.interfaces.ztwfuehebm.allowedTCPPorts = [ 22 ];
 }

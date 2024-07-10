@@ -7,5 +7,6 @@
     ./overlays.nix
     ./docker.nix
     ./unfree-pkgs.nix
+    ./ssh.nix
   ];
 }
