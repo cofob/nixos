@@ -72,6 +72,9 @@
           "browser.fixup.alternate.enabled" = false;
           "network.dns.disableIPv6" = false;
 
+          # Enable userChrome.css
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
           # telemetry
           "browser.newtabpage.activity-stream.feeds.telemetry" = false;
           "browser.newtabpage.activity-stream.telemetry" = false;
