@@ -13,6 +13,7 @@
     [
       # CLI
       feh
+      rclone
       # GUI
       pavucontrol
       deluge
