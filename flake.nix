@@ -43,7 +43,8 @@
       let pkgs = import nixpkgs { inherit system; };
       in {
         devShells.default = pkgs.mkShell {
-          buildInputs = [ agenix.packages.${system}.default pkgs.nixfmt-classic ];
+          buildInputs =
+            [ agenix.packages.${system}.default pkgs.nixfmt-classic ];
         };
 
         packages = import ./overlay.nix pkgs attrs;
