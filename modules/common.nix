@@ -1,8 +1,8 @@
 { self, config, lib, pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "mem_sleep_default=deep" ]; # Enable hibernation
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelParams = [ "mem_sleep_default=deep" ]; # Enable hibernation
   boot.readOnlyNixStore = true;
 
   services.earlyoom.enable = true;

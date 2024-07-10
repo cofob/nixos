@@ -5,6 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixos-x13s.url = "git+https://codeberg.org/adamcstephens/nixos-x13s";
+
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -17,13 +19,19 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, agenix, ... }@attrs:
-    {
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+      meta = builtins.mapAttrs
+        (key: value: pkgs.lib.importJSON ./machines/${key}/meta.json)
+        (builtins.readDir ./machines);
+    in {
       nixosModules.home-headless = import ./home/headless.nix;
       nixosModules.home-nixless = import ./home/nixless.nix;
 
       nixosConfigurations = builtins.mapAttrs (key: value:
         (nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          system = meta.${key}.system;
           specialArgs = attrs;
           modules = [ ./modules/modules.nix ./machines/${key} ];
         })) (builtins.readDir ./machines);
@@ -35,7 +43,7 @@
       let pkgs = import nixpkgs { inherit system; };
       in {
         devShells.default = pkgs.mkShell {
-          buildInputs = [ agenix.packages.${system}.default pkgs.nixfmt ];
+          buildInputs = [ agenix.packages.${system}.default pkgs.nixfmt-classic ];
         };
 
         packages = import ./overlay.nix pkgs attrs;
