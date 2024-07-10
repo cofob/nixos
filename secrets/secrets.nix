@@ -15,4 +15,11 @@ let
   systems = husky ++ twinkpad;
 
   all = users ++ systems;
-in { "./passwords/cofob.age".publicKeys = all; }
+in {
+  "./passwords/cofob.age".publicKeys = all;
+
+  "./syncthing/husky/key.age".publicKeys = users ++ husky;
+  "./syncthing/husky/cert.age".publicKeys = users ++ husky;
+  "./syncthing/twinkpad/key.age".publicKeys = users ++ twinkpad;
+  "./syncthing/twinkpad/cert.age".publicKeys = users ++ twinkpad;
+}

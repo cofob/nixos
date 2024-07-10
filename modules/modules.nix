@@ -8,5 +8,6 @@
     ./docker.nix
     ./unfree-pkgs.nix
     ./ssh.nix
+    ./syncthing.nix
   ];
 }
