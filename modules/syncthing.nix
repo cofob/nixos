@@ -5,9 +5,18 @@ let
   machine = config.networking.hostName;
 
   machine-ids = {
-    husky = "F3AWR4N-QH2BEOM-XVIAL5C-CSUC5U6-OFQZQUC-7MN4RJ5-2D4XEXU-JH4DEQB";
-    twinkpad =
-      "FOKHYOX-FGM624F-BWUKMFQ-OR6LJ67-IA5TVOO-XNNF7PM-YZFHBGE-BXEU3AF";
+    husky = {
+      trusted = true;
+      id = "F3AWR4N-QH2BEOM-XVIAL5C-CSUC5U6-OFQZQUC-7MN4RJ5-2D4XEXU-JH4DEQB";
+    };
+    twinkpad = {
+      trusted = true;
+      id = "FOKHYOX-FGM624F-BWUKMFQ-OR6LJ67-IA5TVOO-XNNF7PM-YZFHBGE-BXEU3AF";
+    };
+    sync = {
+      trusted = false;
+      id = "KEAMZNQ-TF43NWD-VLUPQQ7-VELHM3U-TPPORFY-HZG6TVE-KVPSD6O-M2FGNQ5";
+    };
   };
   filteredDevices = lib.filterAttrs (name: value: name != machine) machine-ids;
 in {
@@ -39,13 +48,11 @@ in {
       cert = config.age.secrets."syncthing-cert-${machine}".path;
       settings = {
         options.urAccepted = -1;
-        overrideDevices = true;
-        overrideFolders = false;
 
-        devices = lib.mapAttrs (name: id: {
-          inherit id;
+        devices = lib.mapAttrs (name: value: {
+          id = value.id;
           inherit name;
-          autoAcceptFolders = true;
+          autoAcceptFolders = value.trusted;
         }) filteredDevices;
       };
     };
