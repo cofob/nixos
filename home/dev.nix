@@ -29,7 +29,6 @@
         mkhl.direnv
         serayuzgur.crates
         redhat.vscode-yaml
-        hashicorp.terraform
         rust-lang.rust-analyzer
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
@@ -56,6 +55,12 @@
           version = "1.0.1";
           sha256 = "sha256-qwxqOGublQeVP2qrLF94ndX/Be9oZOn+ZMCFX1yyoH0=";
         }
+        {
+          name = "amber-language";
+          publisher = "Ph0enixKM";
+          version = "1.2.6";
+          sha256 = "sha256-Uxw6v8tc12haqgBFaTogEHEkzCYg+mzoIhCCZ6cyeX0=";
+        }
       ];
     userSettings = {
       # Suggest faster
@@ -66,6 +71,9 @@
 
       # Sticky nested
       "editor.stickyScroll.enabled" = true;
+
+      # Auto rename html tags
+      "editor.linkedEditing" = true;
 
       # Set tab size
       "editor.tabSize" = 2;
@@ -115,6 +123,8 @@
       # Other
       "redhat.telemetry.enabled" = false;
       "telemetry.telemetryLevel" = "off";
+      "extensions.autoUpdate" = false;
+      "update.mode" = "none";
     };
   };
 
