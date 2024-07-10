@@ -54,7 +54,7 @@
   environment.systemPackages = with pkgs;
     let
       upgrade-system = pkgs.writeScriptBin "upgrade-system" ''
-        sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "github:cofob/nixos.git?ref=master"
+        sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "github:cofob/nixos?ref=master"
       '';
     in [
       upgrade-system
