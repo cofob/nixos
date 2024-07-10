@@ -53,6 +53,7 @@ in {
           id = value.id;
           inherit name;
           autoAcceptFolders = value.trusted;
+          untrusted = !value.trusted;
         }) filteredDevices;
       };
     };
