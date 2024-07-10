@@ -3,7 +3,7 @@
 {
   services.openssh.openFirewall = false;
   services.openssh.settings = {
-    PermitRootLogin = false;
+    PermitRootLogin = "no";
     PasswordAuthentication = false;
   };
 }
