@@ -46,16 +46,6 @@ in {
       dataDir = "/home/cofob";
       key = config.age.secrets."syncthing-key-${machine}".path;
       cert = config.age.secrets."syncthing-cert-${machine}".path;
-      settings = {
-        options.urAccepted = -1;
-
-        devices = lib.mapAttrs (name: value: {
-          id = value.id;
-          inherit name;
-          autoAcceptFolders = value.trusted;
-          untrusted = !value.trusted;
-        }) filteredDevices;
-      };
     };
   };
 }
