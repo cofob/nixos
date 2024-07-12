@@ -30,6 +30,8 @@
 
   custom.syncthing.enable = true;
 
+  services.tailscale.enable = true;
+
   services.zerotierone = {
     enable = true;
     joinNetworks = [ "e4da7455b237c59e" ];
