@@ -18,7 +18,7 @@ set $menu_interactive fuzzel
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /home/cofob/Pictures/bg.jpg fill
+output * bg /home/cofob/Pictures/bg.jpg fill
 #
 # Example configuration:
 #
