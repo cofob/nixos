@@ -2,13 +2,13 @@
 
 {
   home.packages = with pkgs.unstable;
-    [ gh-copilot cura ] ++ (with pkgs; [ dbeaver-bin ]);
+    [ gh-copilot dbeaver-bin ];
 
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
+    package = pkgs.unstable.vscode;
     mutableExtensionsDir = false;
-    extensions = with pkgs.vscode-extensions;
+    extensions = with pkgs.unstable.vscode-extensions;
       [
         bierner.emojisense
         editorconfig.editorconfig
@@ -27,7 +27,6 @@
         davidanson.vscode-markdownlint
         yzhang.markdown-all-in-one
         mkhl.direnv
-        serayuzgur.crates
         redhat.vscode-yaml
         rust-lang.rust-analyzer
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
@@ -60,6 +59,12 @@
           publisher = "Ph0enixKM";
           version = "1.2.6";
           sha256 = "sha256-Uxw6v8tc12haqgBFaTogEHEkzCYg+mzoIhCCZ6cyeX0=";
+        }
+        {
+          name = "Dependi";
+          publisher = "fill-labs";
+          version = "0.7.3";
+          sha256 = "sha256-T/PAgmJlQ1NJ0kh2UXroyMSXJMs7uQJJUR+Rcr4ilFI=";
         }
       ];
     userSettings = {
