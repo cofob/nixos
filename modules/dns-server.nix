@@ -20,6 +20,7 @@
   networking = {
     nameservers = [ "127.0.0.1" ];
     networkmanager.dns = "none";
+    resolvconf.enable = false;
   };
   environment.systemPackages = [ pkgs.dig ];
 }
