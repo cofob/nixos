@@ -6,7 +6,7 @@
 
   programs.vscode = {
     enable = true;
-    package = pkgs.unstable.vscode;
+    package = pkgs.unstable.vscode-fhs;
     mutableExtensionsDir = false;
     extensions = with pkgs.unstable.vscode-extensions;
       [
@@ -29,6 +29,7 @@
         mkhl.direnv
         redhat.vscode-yaml
         rust-lang.rust-analyzer
+        ms-vscode-remote.remote-ssh
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "mypy-type-checker";
