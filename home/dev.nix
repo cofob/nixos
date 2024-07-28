@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs.unstable;
-    [ gh-copilot dbeaver-bin ];
+  home.packages = (with pkgs.unstable; [ gh-copilot dbeaver-bin ])
+    ++ (with pkgs; [ mold clang cargo rustc ]);
 
   programs.vscode = {
     enable = true;
@@ -159,4 +159,14 @@
     enable = true;
     settings.git_protocol = "ssh";
   };
+
+  home.file.".cargo/config.toml".text = ''
+    [target.x86_64-unknown-linux-gnu]
+    linker = "clang"
+    rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
+
+    [target.aarch64-unknown-linux-gnu]
+    linker = "clang"
+    rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
+  '';
 }
