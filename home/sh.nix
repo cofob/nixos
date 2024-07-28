@@ -17,6 +17,7 @@
     python312
     python312Packages.ipython
     py3env
+    download-nixpkgs-cache-index
   ];
 
   programs.bash.enable = true;
