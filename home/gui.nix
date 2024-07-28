@@ -46,9 +46,12 @@
     "application/x-7z-compressed" = "file-roller.desktop";
     "application/pdf" = "evince.desktop";
     "application/vnd.oasis.opendocument" = "libreoffice-writer.desktop";
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "libreoffice-writer.desktop";
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" =
+      "libreoffice-writer.desktop";
     "application/msword" = "libreoffice-writer.desktop";
-    "application/vnd.openxmlformats-officedocument.spreadsheet" = "libreoffice-calc.desktop";
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation" = "libreoffice-impress.desktop";
+    "application/vnd.openxmlformats-officedocument.spreadsheet" =
+      "libreoffice-calc.desktop";
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation" =
+      "libreoffice-impress.desktop";
   };
 }
