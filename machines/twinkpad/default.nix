@@ -1,8 +1,12 @@
-{ pkgs, self, nixos-x13s, ... }:
+{ pkgs, self, nixos-x13s, system, ... }@inputs:
 
 {
   imports = [
-    nixos-x13s.nixosModules.default
+    ((import "${nixos-x13s}/module.nix" {
+      dtbName = "sc8280xp-lenovo-thinkpad-x13s.dtb";
+    } ({
+      pkgs = (import inputs.nixos-x13s.inputs.nixpkgs { inherit system; });
+    } // inputs)))
 
     "${self}/hardware/twinkpad.nix"
 
@@ -18,7 +22,7 @@
 
   nixos-x13s.enable = true;
   nixos-x13s.bluetoothMac = "02:68:b3:29:da:98";
-  nixos-x13s.kernel = "mainline";
+  nixos-x13s.kernel = "jhovold";
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
