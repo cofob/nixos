@@ -36,6 +36,7 @@
     "x-scheme-handler/http" = "firefox.desktop";
     "x-scheme-handler/https" = "firefox.desktop";
     "x-scheme-handler/magnet" = "deluge.desktop";
+    "x-www-browser" = "firefox.desktop";
     "image/png" = "feh.desktop";
     "image/gif" = "feh.desktop";
     "image/bmp" = "feh.desktop";
@@ -53,5 +54,6 @@
       "libreoffice-calc.desktop";
     "application/vnd.openxmlformats-officedocument.presentationml.presentation" =
       "libreoffice-impress.desktop";
+    "inode/directory" = "thunar.desktop";
   };
 }
