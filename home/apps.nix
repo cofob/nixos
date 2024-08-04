@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs; [ chromium ];
+  home.packages = with pkgs; [ chromium appimage-run ];
 
   programs.firefox = {
     enable = true;
