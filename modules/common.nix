@@ -73,7 +73,7 @@
     ];
 
   boot.tmp.cleanOnBoot = true;
-  boot.tmp.useTmpfs = true;
+  boot.tmp.useTmpfs = false;
 
   services.fstrim.enable = true;
 

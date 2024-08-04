@@ -16,8 +16,10 @@
     "${self}/modules/dns-server.nix"
     "${self}/modules/gui.nix"
     "${self}/modules/sway.nix"
-
-    ./libvirt.nix
+    "${self}/modules/i2pd.nix"
+    "${self}/modules/tor.nix"
+    "${self}/modules/yggdrasil.nix"
+    "${self}/modules/libvirt.nix"
   ];
 
   nixos-x13s.enable = true;

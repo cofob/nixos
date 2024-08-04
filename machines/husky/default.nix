@@ -9,7 +9,10 @@
     "${self}/modules/dns-server.nix"
     "${self}/modules/gui.nix"
     "${self}/modules/sway.nix"
-    ./libvirt.nix
+    "${self}/modules/i2pd.nix"
+    "${self}/modules/tor.nix"
+    "${self}/modules/yggdrasil.nix"
+    "${self}/modules/libvirt.nix"
   ];
 
   home-manager.useGlobalPkgs = true;
@@ -37,4 +40,10 @@
 
   # Open ssh port
   networking.firewall.interfaces.ztwfuehebm.allowedTCPPorts = [ 22 ];
+
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+    extraCompatPackages = with pkgs; [ proton-ge-bin ];
+  };
 }
